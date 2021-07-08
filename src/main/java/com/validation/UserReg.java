@@ -53,6 +53,18 @@ public class UserReg {
 		Matcher match = patt.matcher(mobile);
 		return match.matches();
 	}
+	
+	//Check Password
+	
+	public static boolean isPassword(String password) {
+		String regex = "^[a-zA-Z]{8,}$";
+		Pattern patt = Pattern.compile(regex);
+		if (password == null) {
+			return false;
+		}
+		Matcher match = patt.matcher(password);
+		return match.matches();
+	}
 
 
 }
