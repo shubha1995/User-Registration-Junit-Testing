@@ -54,7 +54,7 @@ public class UserReg {
 		return match.matches();
 	}
 	
-	//Check Password
+	//Check Password Rule 1
 	
 	public static boolean isPassword(String password) {
 		String regex = "^[a-zA-Z]{8,}$";
@@ -63,6 +63,18 @@ public class UserReg {
 			return false;
 		}
 		Matcher match = patt.matcher(password);
+		return match.matches();
+	}
+	
+	//Check Password Rule 2
+	
+	public static boolean isPassword1(String password1) {
+		String regex = "^[A-Z]{1}+[a-zA-Z]{7,}$";
+		Pattern patt = Pattern.compile(regex);
+		if (password1 == null) {
+			return false;
+		}
+		Matcher match = patt.matcher(password1);
 		return match.matches();
 	}
 

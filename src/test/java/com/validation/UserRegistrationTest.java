@@ -125,7 +125,7 @@ public class UserRegistrationTest {
 		Assert.assertFalse(actual);
 	}
 
-	// Check Password
+	// Check Password Rule 1
 
 	@Test
 	public void givenpassword_WhenPassword_is_Valid_ShouldReturn() {
@@ -147,5 +147,22 @@ public class UserRegistrationTest {
 		boolean actual = userReg.isPassword("abcdefgh7i");
 		Assert.assertFalse(actual);
 	}
+	
+	// Check Password Rule 2
+
+	@Test
+	public void givenpassword1_WhenPassword1_is_Valid_ShouldReturn() {
+
+		boolean actual = userReg.isPassword1("Abcdefgh");
+		Assert.assertTrue(actual);
+	}
+
+	@Test
+	public void givenpassword1_WhenPassword1_Contain_Lower_Case_ShouldReturn() {
+
+		boolean actual = userReg.isPassword1("abcdefghi");
+		Assert.assertFalse(actual);
+	}
+	
 
 }
