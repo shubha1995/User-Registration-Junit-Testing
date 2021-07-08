@@ -97,6 +97,38 @@ public class UserRegistrationTest {
 			boolean actual = userReg.isEmail("ssbhaumik.dmr@gmail.com.in12");
 			Assert.assertFalse(actual);
 		}
+		
+		//Check Mobile Format
+		
+		@Test
+		public void givenmobileNo_WhenMobileNo_is_Valid_ShouldReturn() {
+
+			boolean actual = userReg.isMobileNo("91 7005803672");
+			Assert.assertTrue(actual);
+		}
+
+		@Test
+		public void givenmobileNo_WhenMobileNo_contain_char_ShouldReturn() {
+
+			boolean actual = userReg.isMobileNo("91 700580367a");
+			Assert.assertFalse(actual);
+		}
+		
+		@Test
+		public void givenmobileNo_WhenMobileNo_contain_more_then_one_space_ShouldReturn() {
+
+			boolean actual = userReg.isMobileNo("91  7005803672");
+			Assert.assertFalse(actual);
+		}
+		
+		@Test
+		public void givenmobileNo_WhenMobileNo_Contain_More_Then_Ten_Digit_ShouldReturn() {
+
+			boolean actual = userReg.isMobileNo("91 700580367233");
+			Assert.assertFalse(actual);
+		}
+
+
 
 
 }

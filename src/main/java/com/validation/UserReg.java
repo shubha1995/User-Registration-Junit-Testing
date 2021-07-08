@@ -41,6 +41,18 @@ public class UserReg {
 		Matcher match = patt.matcher(email);
 		return match.matches();
 	}
+	
+	//Check Mobile Format
+	
+	public static boolean isMobileNo(String mobile) {
+		String regex = "^[0-9]{2}\\s{0,1}[0-9]{10}$";
+		Pattern patt = Pattern.compile(regex);
+		if (mobile == null) {
+			return false;
+		}
+		Matcher match = patt.matcher(mobile);
+		return match.matches();
+	}
 
 
 }
