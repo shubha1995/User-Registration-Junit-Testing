@@ -74,5 +74,29 @@ public class UserRegistrationTest {
 		boolean actual = userReg.isLastName("Bhaumik123");
 		Assert.assertFalse(actual);
 	}
+	
+	//Check Email 
+	
+		@Test
+		public void givenEmail_WhenEmail_is_Valid_ShouldReturn() {
+
+			boolean actual = userReg.isEmail("ssbhaumik.dmr@gmail.com.in");
+			Assert.assertTrue(actual);
+		}
+
+		@Test
+		public void givenEmail_WhenEmail_does_not_contain_Special_char_ShouldReturn() {
+
+			boolean actual = userReg.isEmail("ssbhaumikdmrgmailcomin");
+			Assert.assertFalse(actual);
+		}
+
+		@Test
+		public void givenEmail_WhenEmail_Should_not_End_with_Number_ShouldReturn() {
+
+			boolean actual = userReg.isEmail("ssbhaumik.dmr@gmail.com.in12");
+			Assert.assertFalse(actual);
+		}
+
 
 }
