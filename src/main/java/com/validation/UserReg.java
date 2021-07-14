@@ -1,4 +1,4 @@
-
+	
 package com.validation;
 
 import java.util.regex.Matcher;
@@ -33,7 +33,7 @@ public class UserReg {
 	//Check Email
 	
 	public static boolean isEmail(String email) {
-		String regex = "^[a-zA-Z]+([.][A-Za-z]+)*@[a-zA-Z]+[.]+[a-zA-Z]{2,3}+([.][A-Za-z]+)*$";
+		String regex = "^[a-zA-Z]+([.][A-Za-z]+)*@[a-zA-Z]+[.]+[a-zA-Z]{2,3}+([.][A-Za-z]{2}+)*$";
 		Pattern patt = Pattern.compile(regex);
 		if (email == null) {
 			return false;
@@ -101,6 +101,8 @@ public class UserReg {
 		Matcher match = patt.matcher(password3);
 		return match.matches();
 	}
+	
+
 
 
 
