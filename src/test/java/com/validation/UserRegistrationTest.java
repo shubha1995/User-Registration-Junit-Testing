@@ -80,28 +80,27 @@ public class UserRegistrationTest {
 		boolean actual = userReg.isEmail("ssbhaumik.dmr@gmail.com.in");
 		Assert.assertTrue(actual);
 	}
+
 	@Test
 	public void givenEmail_WhenEmail_tld_can_not_staret_with_dot_ShouldReturn_False() {
 
 		boolean actual = userReg.isEmail("ssbhaumikdmr@.gmailcom.in");
 		Assert.assertFalse(actual);
 	}
-	
+
 	@Test
 	public void givenEmail_WhenEmail_first_character_can_not_start_dot_with_ShouldReturn_False() {
 
 		boolean actual = userReg.isEmail("ssbhaumikdmr@.gmail.com.in");
 		Assert.assertFalse(actual);
 	}
-	
+
 	@Test
 	public void givenEmail_WhenEmail_tld_must_contain_atlist_two_letteers_ShouldReturn_False() {
 
 		boolean actual = userReg.isEmail("ssbhaumikdmr@.gmail.com.in");
 		Assert.assertFalse(actual);
 	}
-
-
 
 	@Test
 	public void givenEmail_WhenEmail_does_not_contain_Special_char_ShouldReturn_False() {
@@ -217,14 +216,14 @@ public class UserRegistrationTest {
 		boolean actual = userReg.isPassword3("Abcdefg");
 		Assert.assertFalse(actual);
 	}
-	
+
 	@Test
 	public void givenpassword3_WhenPassword3_have_only_character_ShouldReturn_False() {
 
 		boolean actual = userReg.isPassword3("Abcdefgijkl");
 		Assert.assertFalse(actual);
 	}
-	
+
 	@Test
 	public void givenpassword3_WhenPassword3_dont_have_specialCharacter_ShouldReturn_False() {
 
